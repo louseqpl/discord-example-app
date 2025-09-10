@@ -21,9 +21,9 @@ app.post('/interactions', verifyKeyMiddleware(process.env.PUBLIC_KEY), function 
         data: { content: 'A wild message appeared' },
       });
     }
-    
+
     // "challenge" command
-    if (name === 'challenge' && id) {
+    if (data.name === 'challenge' && id) {
       // Interaction context
       const context = req.body.context;
       // User ID is in user field for (G)DMs, and member for servers
